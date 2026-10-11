@@ -21,8 +21,8 @@ export function initNavigation() {
 
   const swiperEl = document.querySelector('.ind-swiper');
   if (swiperEl) {
-    // Mirrors the real Tamkeen site's service carousel: Swiper with
-    // slidesPerView "auto" (card width comes from CSS) and no loop.
+    // Service carousel: Swiper with slidesPerView "auto"
+    // (card width comes from CSS) and no loop.
     const swiper = new Swiper(swiperEl, {
       slidesPerView: 'auto',
       spaceBetween: 20,
