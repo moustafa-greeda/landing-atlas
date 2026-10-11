@@ -1,0 +1,59 @@
+/* ---------- Why (navy panel with 3D stat blocks) ---------- */
+.why{background:var(--navy);color:#fff;border-radius:44px;padding:clamp(28px,5vw,72px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center;position:relative;overflow:hidden;isolation:isolate}
+.why::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:90px solid rgba(255,255,255,.035);left:-200px;top:-260px;z-index:-1}
+html[dir=ltr] .why::before{left:auto;right:-200px}
+.why-copy{display:grid;gap:22px;min-width:0;order:1}
+.why-copy h2{font-size:clamp(1.8rem,3.4vw,2.8rem)}
+.why-copy p{opacity:.92;font-size:.96rem}
+.why{--pad:clamp(28px,5vw,72px)}
+.stairs{order:2;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(96px,auto);min-width:0;align-self:end;position:relative;z-index:0}
+@media (min-width:901px){.why{padding-bottom:0}.why-copy{padding-bottom:var(--pad)}}
+.stairs .sc{display:flex;align-items:baseline;justify-content:flex-start;gap:10px;flex-wrap:wrap;padding:18px 22px;border-radius:26px;min-width:0;align-content:center;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.stairs .sc:not(.c-cut):hover{transform:translateY(-4px)}
+.stairs .n{font-family:var(--f-display);font-weight:700;font-size:clamp(1.6rem,3vw,2.6rem);line-height:1.1;font-variant-numeric:tabular-nums;white-space:nowrap;order:-1}
+.stairs .l{font-size:.86rem;opacity:.95}
+.stairs .cr{background:var(--bg);color:var(--navy)}
+.stairs .nv{color:#fff}
+.c-branch{grid-column:3/5;grid-row:1}.c-pin{grid-column:2;grid-row:1;justify-content:center;align-items:center;justify-self:end;width:min(100%,96px)}
+.c-pin svg.i{width:42px;height:42px;fill:currentColor;stroke:var(--bg)}
+.c-homes{grid-column:1/3;grid-row:2}.c-clients{grid-column:3/5;grid-row:2}
+.c-hours{grid-column:1/3;grid-row:3}.c-icons{grid-column:3/5;grid-row:3;align-items:center;gap:18px}
+.c-icons svg.i{width:36px;height:36px}.c-icons .clk{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--orange);color:var(--bg)}.c-icons .clk svg.i{width:24px;height:24px}
+.c-workers{grid-column:1/3;grid-row:4}
+.c-cut{grid-column:3/5;grid-row:4;background:var(--bg);border-radius:0 44px 0 0;margin:0 0 0 calc(-1*var(--pad))}
+.stairs .n{font-size:clamp(1.4rem,2.5vw,2.2rem)}
+html[dir=ltr] .c-cut{margin:0 calc(-1*var(--pad)) 0 0;border-radius:44px 0 0 0}
+@media (max-width:900px){.why{grid-template-columns:1fr}}
+@media (max-width:900px){.stairs .c-cut,.stairs .c-icons{display:none}.c-workers{padding-bottom:18px!important}}
+@media (max-width:560px){.stairs{grid-template-columns:1fr;grid-auto-rows:auto;gap:4px}.stairs>.sc{grid-column:1!important;grid-row:auto!important}.c-pin{display:none!important}.c-icons{order:4}.stairs .cr{margin-inline-end:36px}}
+
+.why-stats,.why-shape{display:none}
+/* Desktop mirrors tamkeenhr.sa: a fixed 495px box; the navy shape is its own clipped
+   layer so stats sitting inside the cutouts aren't clipped away with it. */
+@media (min-width:1080px){
+  .why{display:block;background:none;border-radius:0;padding:60px;height:560px;max-width:1600px;margin-inline:auto;overflow:visible}
+  .why::before{display:none}
+  .why-shape{display:block;position:absolute;inset:0;z-index:-1;clip-path:url(#about-tamkeen);background:radial-gradient(circle at 0 0,transparent 79px,rgba(0,0,0,.07) 80px 159px,transparent 160px),var(--navy)}
+  html[dir=ltr] .why-shape{clip-path:url(#about-tamkeen-english);background:radial-gradient(circle at 100% 0,transparent 79px,rgba(0,0,0,.07) 80px 159px,transparent 160px),var(--navy)}
+  .why-copy{display:block;padding-bottom:0}
+  .why-copy h2{font-size:42px;max-width:464px}
+  .why-copy p{font-size:.875rem;line-height:1.7;width:40%;max-width:420px;padding-block:40px 0;opacity:1}
+  .why-copy p+p{padding-block:0 40px}
+  .stairs{display:none}
+  .why-stats{display:block;position:absolute;inset:0;pointer-events:none}
+  .ws{position:absolute;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .ws-n{font-family:var(--f-display);font-weight:700;font-size:42px;line-height:1.2;font-variant-numeric:tabular-nums}
+  .ws-l{font-style:normal;font-size:.875rem}
+  .ws.nv{color:#fff}
+  .ws.cr{color:var(--navy)}
+  /* tops are the live site's px values divided by its 495px height, so they track the clip shape at any height */
+  .ws-branch{top:18.18%;inset-inline-end:15%}
+  .ws-home{top:36.36%;inset-inline-end:35%}
+  .ws-employed{top:77.58%;inset-inline-end:30%}
+  .ws-customer{top:36.36%;inset-inline-end:12%}
+  .ws-hours{top:54.34%;inset-inline-start:51%}
+  .wi{position:absolute;width:38px;height:auto}
+  .wi-location{top:23.23%;inset-inline-end:33%}
+  .wi-stars{top:57.17%;inset-inline-end:15%}
+  .wi-time{top:57.17%;inset-inline-end:21%}
+}

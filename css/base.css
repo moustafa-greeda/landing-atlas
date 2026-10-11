@@ -1,0 +1,34 @@
+/* GHASIQ HR landing page styles */
+/* Layout: cream page, navy display type, big rounded photo cards with notched corners, one navy band per section group. Single light look by design. */
+:root{
+  --bg:#FDFAF3; --surface:#FFFFFF; --ink:#1B1B1B; --muted:#6E6A63;
+  --navy:#183C6B; --navy-2:#24548F; --cyan:#49CAE4; --orange:#F3A83B; --peach:#FDEED8; --sky:#DDF3FA;
+  --f-display:"Almarai",Tahoma,sans-serif;
+  --f-body:"Almarai","Segoe UI",Tahoma,sans-serif;
+  --gutter:clamp(16px,4vw,100px); --max:1280px; --R:34px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip;font-size:112.5%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.75;overflow-x:clip}
+html[lang="en"] body{line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.25;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{margin-inline:auto;padding-inline:var(--gutter)}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:10px}
+.screen-reader-text{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+svg.i{width:1.2em;height:1.2em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+html[dir="ltr"] .flip{transform:scaleX(-1)}
+
+/* ---------- Section heads ---------- */
+section{padding-block:clamp(56px,8vw,110px)}
+.title{color:var(--navy);font-size:clamp(1.9rem,3.6vw,3rem)}
+.lead{color:var(--muted);max-width:56ch}
+.center{text-align:center;display:grid;justify-items:center;gap:18px;margin-bottom:clamp(28px,4vw,52px)}
+
+/* Page templates */
+.page-content{padding-block:64px}
+.page-content .entry{max-width:760px}
+.page-content h1{color:var(--navy);font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:20px}

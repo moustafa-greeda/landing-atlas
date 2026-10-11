@@ -1,0 +1,22 @@
+/* ---------- Individual services ---------- */
+.ind{display:grid;grid-template-columns:minmax(260px,450px) 1fr;gap:clamp(24px,4vw,64px);align-items:center;padding-inline-end:0}
+.ind-copy{display:grid;gap:15px;align-content:start;min-width:0}
+.arrows{display:flex;gap:12px}
+.arrows button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:none;cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.arrows button:hover{background:var(--ink);color:#fff}
+.arrows svg.i{width:14px;height:12px}
+.filters{display:flex;gap:14px;flex-wrap:wrap}
+.filters .pbtn .pl{padding:.75em 2em}
+.filters .pbtn .nb{width:2.9em;height:2.9em}
+
+.ind-swiper{width:100%;min-width:0;overflow:hidden;padding:10px 4px 20px;margin-inline-start:auto;margin-inline-end:0}
+.ind-swiper .swiper-wrapper{align-items:flex-start}
+.svc{width:clamp(240px,30vw,450px);position:relative;display:block;transition:opacity .35s,filter .35s}
+.svc-media{aspect-ratio:450/520;border-radius:32px;overflow:hidden;background:var(--sky);clip-path:url(#svc-clip)}
+html[dir=ltr] .svc-media{clip-path:url(#svc-clip-english)}
+.svc-media img{width:100%;height:100%;object-fit:cover}
+.svc .tag{position:absolute;top:0;inset-inline-start:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:190px;width:fit-content;padding:12px;border-radius:30px;background:linear-gradient(90deg,var(--peach),var(--sky));font-size:.85rem;color:var(--navy)}
+.svc .tag svg.i{width:18px;height:18px;flex:none}
+.svc .name{position:absolute;bottom:20px;inset-inline-start:20px;z-index:2;color:#fff;font-family:var(--f-display);font-weight:700;font-size:1.3rem;padding:.3em .9em;border-radius:16px;background:#21212166}
+.svc.off{opacity:.25;filter:grayscale(.6)}
+@media (max-width:900px){.ind{grid-template-columns:1fr;padding-inline-end:var(--gutter)}}

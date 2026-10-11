@@ -1,0 +1,9 @@
+/* ---------- Gallery (continuous auto-scrolling slider) ---------- */
+.gallery{padding-block:clamp(40px,6vw,80px);padding-inline:clamp(16px,4vw,140px);overflow:hidden}
+.g-swiper{width:100%}
+.g-swiper .swiper-wrapper{align-items:center;transition-timing-function:linear}
+.g-item{border-radius:32px;overflow:hidden;flex-shrink:0;box-shadow:0 30px 50px -30px rgba(0,0,0,.35)}
+.g-item img{width:100%;height:100%;object-fit:cover;display:block}
+.g-item.g-rect{width:clamp(240px,30vw,439px);aspect-ratio:439/247}
+.g-item.g-sq{width:clamp(200px,24vw,360px);aspect-ratio:1/1}
+@media (max-width:768px){.gallery{padding-inline:0}.g-item.g-rect{width:82vw}.g-item.g-sq{width:64vw}}

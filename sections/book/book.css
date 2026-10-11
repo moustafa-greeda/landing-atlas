@@ -1,0 +1,15 @@
+/* ---------- Booking band ---------- */
+.band-wrap{position:relative; padding-block:60px}
+.band{color:#fff;padding:clamp(40px,6vw,80px) clamp(24px,5vw,80px);position:relative;isolation:isolate;overflow:visible;padding-bottom:clamp(90px,9vw,120px)}
+.band-shape{position:absolute;inset:0;background:radial-gradient(60% 120% at 0% 100%,rgba(255,255,255,.05) 0 50%,transparent 50.5%) var(--navy);border-radius:44px;clip-path:url(#cta-band);z-index:-1}
+html[dir=ltr] .band-shape{clip-path:url(#cta-band-english);background:radial-gradient(60% 120% at 100% 100%,rgba(255,255,255,.05) 0 50%,transparent 50.5%) var(--navy)}
+.band h2{width:100%;font-size:clamp(1.7rem,3.2vw,2.6rem);text-align:center}
+.band .h2-tail{font-family:var(--f-display);font-weight:700;line-height:1.25;font-size:clamp(1.7rem,3.2vw,2.6rem)}
+.band .txt{display:grid;justify-items:center;gap:20px;min-width:0;max-width:80%;margin-inline:auto;margin-top:clamp(20px,4vw,50px)}
+.band .row{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.band p{opacity:.92;max-width:46ch;text-align:center}
+.band .p1,.band .p2{position:absolute;width:clamp(150px,17vw,230px);aspect-ratio:1;box-shadow:0 30px 50px -20px rgba(0,0,0,.4);animation:floaty 8s ease-in-out infinite}
+.band .p1{top:-50px;inset-inline-end:clamp(16px,6vw,80px);border-radius:40px}
+.band .p2{bottom:-70px;inset-inline-start:clamp(16px,6vw,80px);width:clamp(180px,22vw,330px);aspect-ratio:330/186;border-radius:40px;animation-delay:-3s}
+@keyframes floaty{0%,100%{transform:translateZ(0) rotateX(0)}50%{transform:translateZ(18px) rotateX(4deg)}}
+@media (max-width:900px){.band{padding-top:150px;padding-bottom:150px}}

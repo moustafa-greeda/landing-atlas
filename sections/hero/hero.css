@@ -1,0 +1,28 @@
+/* ---------- Hero ---------- */
+.hero{display:grid;grid-template-columns:70px 1fr 70px;gap:clamp(12px,2vw,28px);align-items:center;padding-block:28px 40px}
+.rail{display:flex;flex-direction:column;align-items:center;gap:22px;font-size:.88rem}
+.rail .vt{writing-mode:vertical-rl;white-space:nowrap}
+.rail:first-child .vt{color:var(--navy);font-size:.8rem}
+.rail a.scroll-dn{width:28px;height:48px;margin-top:56px;color:var(--navy)}
+.scroll-dn svg{width:100%;height:100%}
+.scroll-dn path:first-of-type{animation:wheel 1.8s infinite}
+.rail a{display:grid;place-items:center;width:34px;height:34px;transition:color .2s,transform .2s}
+.rail a:hover{color:var(--navy);transform:translateY(-2px)}
+.rail svg.s{width:20px;height:20px;fill:currentColor}
+@keyframes wheel{0%{opacity:1;transform:translateY(0)}80%{opacity:0;transform:translateY(6px)}100%{opacity:0}}
+.hero-card{position:relative;border-radius:48px;overflow:hidden;min-height:max(420px,calc(90vh - 68px));display:grid;align-content:center;justify-items:center;text-align:center;padding:clamp(28px,5vw,64px);color:#fff;isolation:isolate;background:radial-gradient(120% 90% at 80% 10%,#2E6AB3 0%,var(--navy) 45%,#0D2850 100%)}
+.hero-card .bgimg{position:absolute;inset:0;z-index:-3}
+.hero-card .bgimg img{width:100%;height:100%;object-fit:cover}
+.hero-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,25,50,.25),rgba(10,25,50,.55))}
+.hero-card h1{font-size:clamp(2rem,4.6vw,3.6rem);max-width:15ch;text-shadow:0 4px 30px rgba(0,0,0,.25)}
+.hero-row{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:28px;flex-wrap:wrap}
+.hero-row p{max-width:44ch;font-size:.98rem;opacity:.95;text-align:start}
+.hero .n-tl{--r:34px}
+.hero .n-tl .ring-ic{width:88px;height:88px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.rail{display:none}.hero-card{border-radius:34px;min-height:max(440px,calc(90vh - 68px))}.hero-row{flex-direction:column}.hero-row p{text-align:center}.hero .n-tl .ring-ic{width:64px;height:64px}}
+
+/* Hero intro on page load (it's above the fold, so the scroll observer never sees it); keyframes live in css/animations.css */
+.js .hero-card{animation:rv-zoom 1.1s var(--ease-out) both}
+.js .hero-card h1{animation:rv-in .9s var(--ease-out) .3s both}
+.js .hero-row{animation:rv-in .9s var(--ease-out) .45s both}
+.js .hero .rail{animation:rv-fade 1s ease .7s both}
